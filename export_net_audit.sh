@@ -3,7 +3,10 @@
 # Exports net_connect audit entries to a user-readable CSV
 # Run as root via systemd timer
 
-OUTFILE="/home/retgab/.golannalog/audit_connections.csv"
+REAL_USER="${SUDO_USER:-$(logname 2>/dev/null || echo "$USER")}"
+REAL_HOME=$(eval echo "~$REAL_USER")
+OUTFILE="${REAL_HOME}/.golannalog/audit_connections.csv"
+mkdir -p "$(dirname "$OUTFILE")"
 TMPFILE="${OUTFILE}.tmp"
 
 # Write header if file doesn't exist
@@ -54,5 +57,5 @@ fi
 rm -f "$TMPFILE"
 
 # Ensure the user can read it
-chown retgab:retgab "$OUTFILE"
+chown "$REAL_USER":"$REAL_USER" "$OUTFILE"
 chmod 600 "$OUTFILE"
