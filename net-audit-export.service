@@ -1,0 +1,6 @@
+[Unit]
+Description=Export net_connect audit log entries to user-readable CSV
+
+[Service]
+Type=oneshot
+ExecStart=/home/retgab/Dev/golannalog/export_net_audit.sh

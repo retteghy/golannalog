@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodically export net_connect audit entries
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
