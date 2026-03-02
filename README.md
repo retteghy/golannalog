@@ -1,7 +1,5 @@
 # GoLANnaLog — TUI Network Audit Viewer
 
-> *golannalog* — a palindrome. Read it backwards.
-
 Interactive terminal UI for browsing auditd `connect()` syscall logs, built with Go and [Bubbletea](https://github.com/charmbracelet/bubbletea).
 
 Reads `~/.golannalog/audit_connections.csv` (populated by a systemd timer running `export_net_audit.sh`) and displays an interactive, sortable, filterable table enriched with whois data.
