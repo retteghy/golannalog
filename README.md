@@ -1,6 +1,6 @@
 # GoLANnaLog — TUI Network Audit Viewer
 
-Interactive terminal UI for browsing auditd `connect()` syscall logs, built with Go and [Bubbletea](https://github.com/charmbracelet/bubbletea).
+See every outbound connection your Linux machine makes — who it talks to, how often, and who owns that IP — in an interactive terminal UI built with Go and [Bubbletea](https://github.com/charmbracelet/bubbletea).
 
 Reads `~/.golannalog/audit_connections.csv` (populated by a systemd timer running `export_net_audit.sh`) and displays an interactive, sortable, filterable table enriched with whois data.
 
